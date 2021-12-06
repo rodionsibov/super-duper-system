@@ -7,11 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // create a playing board
     function createBord() {
-        for(let i = 0; i < width * width; i++) {
+        for (let i = 0; i < width * width; i++) {
             const square = document.createElement('div')
             square.innerHTML = 0
             gridDisplay.appendChild(square)
             squares.push(square)
         }
+        generate()
+    }
+    createBord()
+
+    // generate a number randomly
+    function generate() {
+        let randomNumber = Math.floor(Math.random() * squares.length)
+        if (squares[randomNumber].innerHTML == 0) {
+            squares[randomNumber].innerHTML = 2
+        } else generate()
     }
 })
