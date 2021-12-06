@@ -19,14 +19,11 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     width: 400px;
-    height: 400px;
     background-color: black;
-    border-radius: 4px;
 }
 
 .grid div {
     display: grid;
-    width: 100px;
     height: 100px;
     background-color: teal;
     color: whitesmoke;
