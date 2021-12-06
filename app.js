@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let zeros = Array(missing).fill(0)
             let newColumn = zeros.concat(filteredColumn)
 
-            squasquares[i].innerHTML = newColumn[0]
+            squares[i].innerHTML = newColumn[0]
             squares[i + width].innerHTML = newColumn[1]
             squares[i + width * 2].innerHTML = newColumn[2]
             squares[i + width * 3].innerHTML = newColumn[3]
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // swipe up
-    function moveup() {
+    function moveUp() {
         for (let i = 0; i < 4; i++) {
             let totalOne = squares[i].innerHTML
             let totalTwo = squares[i + width].innerHTML
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let zeros = Array(missing).fill(0)
             let newColumn = filteredColumn.concat(zeros)
 
-            squasquares[i].innerHTML = newColumn[0]
+            squares[i].innerHTML = newColumn[0]
             squares[i + width].innerHTML = newColumn[1]
             squares[i + width * 2].innerHTML = newColumn[2]
             squares[i + width * 3].innerHTML = newColumn[3]
@@ -142,6 +142,10 @@ document.addEventListener('DOMContentLoaded', () => {
             keyRight()
         } else if (e.code === 'ArrowLeft') {
             keyLeft()
+        } else if (e.code === 'ArrowDown') {
+            keyDown()
+        } else if (e.code === 'ArrowUp') {
+            keyUp()
         }
     }
 
@@ -161,6 +165,18 @@ document.addEventListener('DOMContentLoaded', () => {
         generate()
     }
 
+    function keyDown() {
+        moveDown()
+        combineColumn()
+        moveDown()
+        generate()
+    }
 
+    function keyUp() {
+        moveUp()
+        combineColumn()
+        moveUp()
+        generate()
+    }
 
 })
