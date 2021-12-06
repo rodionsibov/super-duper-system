@@ -7,9 +7,11 @@
 body {
     padding: 20px;
     background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.score-container {
+.score-container, #result {
     margin-bottom: 20px;
 }
 
