@@ -1,6 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 20px;
+}
+
 .grid {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 20px;
     width: 400px;
     height: 400px;
     background-color: blue;
@@ -8,7 +19,6 @@
 
 .grid div {
     width: 100px;
-    aspect-ratio: 1/1;
     background-color: yellow;
     font-size: 60px;
     font-weight: bold;
