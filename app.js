@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-    
+
     // swipe left
     function moveLeft() {
         for (let i = 0; i < 16; i++) {
@@ -71,10 +71,42 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-    moveLeft()
 
+    function combineRow() {
+        for (let i = 0; i < 15; i++) {
+            if (squares[i].innerHTML === squares[i + 1].innerHTML) {
+                let combinedTotal = parseInt(squares[i].innerHTML) + parseInt(squares[i + 1].innerHTML)
+                squares[i].innerHTML = combinedTotal
+                squares[i + 1].innerHTML = 0
+            }
 
+        }
+    }
 
+    // assign keycodes
+    function control(e) {
+        if (e.code === 'ArrowRight') {
+            keyRight()
+        } else if(e.code === 'ArrowLeft') {
+            keyLeft()
+        }
+    }
+
+    document.addEventListener('keyup', control)
+
+    function keyRight() {
+        moveRight()
+        combineRow()
+        moveRight()
+        generate()
+    }
+
+    function keyLeft() {
+        moveLeft()
+        combineRow()
+        moveLeft()
+        generate()
+    }
 
 
 
