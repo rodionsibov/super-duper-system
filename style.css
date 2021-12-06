@@ -5,3 +5,9 @@
     height: 400px;
     background-color: blue;
 }
+
+.grid div {
+    width: 100px;
+    aspect-ratio: 1/1;
+    background-color: yellow;
+}
