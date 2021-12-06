@@ -122,6 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 let combinedTotal = parseInt(squares[i].innerHTML) + parseInt(squares[i + 1].innerHTML)
                 squares[i].innerHTML = combinedTotal
                 squares[i + 1].innerHTML = 0
+                score += combinedTotal
+                scoreDisplay.innerHTML = score
             }
         }
         checkForWin()
@@ -133,6 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 let combinedTotal = parseInt(squares[i].innerHTML) + parseInt(squares[i + width].innerHTML)
                 squares[i].innerHTML = combinedTotal
                 squares[i + width].innerHTML = 0
+                score += combinedTotal
+                scoreDisplay.innerHTML = score
             }
         }
         checkForWin()
