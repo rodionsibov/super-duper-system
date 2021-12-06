@@ -20,6 +20,8 @@ body {
     grid-template-columns: repeat(4, 1fr);
     width: 400px;
     background-color: black;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .grid div {
@@ -30,5 +32,5 @@ body {
     font-size: 60px;
     font-weight: bold;
     text-align: center;
-    place-content: center;
+    place-items: center;
 }
