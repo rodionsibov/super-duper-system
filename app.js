@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultDisplay = document.querySelector('#result')
     const width = 4
     let squares = []
+    let score = 0
 
     // create a playing board
     function createBord() {
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let randomNumber = Math.floor(Math.random() * squares.length)
         if (squares[randomNumber].innerHTML == 0) {
             squares[randomNumber].innerHTML = 2
+            checkForGameOver()
         } else generate()
     }
 
