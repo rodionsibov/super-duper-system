@@ -121,8 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 squares[i].innerHTML = combinedTotal
                 squares[i + 1].innerHTML = 0
             }
-
         }
+        checkForWin()
     }
 
     function combineColumn() {
@@ -132,8 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 squares[i].innerHTML = combinedTotal
                 squares[i + width].innerHTML = 0
             }
-
         }
+        checkForWin()
     }
 
     // assign keycodes
