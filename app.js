@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-    moveRight()
     
     // swipe left
     function moveLeft() {
