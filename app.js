@@ -179,4 +179,13 @@ document.addEventListener('DOMContentLoaded', () => {
         generate()
     }
 
+    // check for the number 2048 in the squares to win
+    function checkForWin() {
+        for (let i = 0; i < squares.length; i++) {
+            if (squares[i].innerHTML == 2048) {
+                resultDisplay.innerHTML = 'You Win!'
+                document.removeEventListener('keyup', control)
+            }
+        }
+    }
 })
