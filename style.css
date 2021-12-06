@@ -6,21 +6,30 @@
 
 body {
     padding: 20px;
+    background-color: black;
+}
+
+.score-container {
+    margin-bottom: 20px;
 }
 
 .grid {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     width: 400px;
     height: 400px;
-    background-color: blue;
+    background-color: black;
+    border-radius: 4px;
 }
 
 .grid div {
+    display: grid;
     width: 100px;
-    background-color: yellow;
+    height: 100px;
+    background-color: teal;
+    color: whitesmoke;
     font-size: 60px;
     font-weight: bold;
     text-align: center;
+    place-content: center;
 }
