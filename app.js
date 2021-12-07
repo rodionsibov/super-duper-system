@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (squares[i].innerHTML == 2048) {
                 resultDisplay.innerHTML = 'You Win!'
                 resultDisplay.style.color = 'goldenrod'
-                resultDisplay.style.opacity = '1'
+                resultDisplay.style.display = 'grid'
                 document.removeEventListener('keyup', control)
                 document.querySelectorAll('button').forEach(element => {
                     element.removeEventListener('click', control)
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (zeros === 0) {
             resultDisplay.innerHTML = 'You Lose!'
             resultDisplay.style.color = 'tomato'
-            resultDisplay.style.opacity = '1'
+            resultDisplay.style.display = 'grid'
             document.removeEventListener('keyup', control)
             document.querySelectorAll('button').forEach(element => {
                 element.removeEventListener('click', control)
