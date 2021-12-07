@@ -144,30 +144,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // assign keycodes
     function control(e) {
-        if (e.code === 'ArrowRight') {
+        if (e.code === 'ArrowRight' || e.target.id === 'right-btn') {
             keyRight()
-        } else if (e.code === 'ArrowLeft') {
+        } else if (e.code === 'ArrowLeft' || e.target.id === 'left-btn') {
             keyLeft()
-        } else if (e.code === 'ArrowDown') {
+        } else if (e.code === 'ArrowDown' || e.target.id === 'down-btn') {
             keyDown()
-        } else if (e.code === 'ArrowUp') {
+        } else if (e.code === 'ArrowUp' || e.target.id === 'up-btn') {
             keyUp()
         }
     }
 
     document.addEventListener('keyup', control)
     document.querySelectorAll('button').forEach(element => {
-        element.addEventListener('click', (e) => {
-            if (element.id === 'right-btn') {
-                keyRight()
-            } else if (element.id === 'left-btn') {
-                keyLeft()
-            } else if (element.id === 'down-btn') {
-                keyDown()
-            } else if (element.id === 'up-btn') {
-                keyUp()
-            }
-        })
+        element.addEventListener('click', control)
     });
 
     function keyRight() {
@@ -204,9 +194,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (squares[i].innerHTML == 2048) {
                 resultDisplay.innerHTML = 'You Win!'
                 resultDisplay.style.color = 'goldenrod'
-                resultDisplay.style.fontWeight = 'bold'
+                resultDisplay.style.opacity = '1'
                 document.removeEventListener('keyup', control)
-                document.removeEventListener('click', control)
+                document.querySelectorAll('button').forEach(element => {
+                    element.removeEventListener('click', control)
+                });
             }
         }
     }
@@ -222,9 +214,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (zeros === 0) {
             resultDisplay.innerHTML = 'You Lose!'
             resultDisplay.style.color = 'tomato'
-            resultDisplay.style.fontWeight = 'bold'
+            resultDisplay.style.opacity = '1'
             document.removeEventListener('keyup', control)
-            document.removeEventListener('click', control)
+            document.querySelectorAll('button').forEach(element => {
+                element.removeEventListener('click', control)
+            });
         }
     }
 })

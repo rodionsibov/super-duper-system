@@ -13,9 +13,20 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.score-container, #result {
+.score-container {
     margin-bottom: 30px;
     text-align: center;
+}
+
+#result {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    background-color: rgba(7, 3, 3, 0.8);
+    backdrop-filter: blur(3px);
+    font-weight: bold;
+    opacity: 0;
 }
 
 #score {
