@@ -21,11 +21,12 @@ body {
 #result {
     position: absolute;
     inset: 0;
-    display: none;
+    display: grid;
     place-content: center;
     background-color: rgba(7, 3, 3, 0.8);
     backdrop-filter: blur(3px);
     font-weight: bold;
+    font-size: xx-large;
 }
 
 #score {
