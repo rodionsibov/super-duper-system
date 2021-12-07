@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('keyup', control)
     document.querySelectorAll('button').forEach(element => {
-        element.addEventListener('keyup', (e) => {
+        element.addEventListener('click', (e) => {
             if (element.id === 'right-btn') {
                 keyRight()
             } else if (element.id === 'left-btn') {
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (element.id === 'down-btn') {
                 keyDown()
             } else if (element.id === 'up-btn') {
-                keyUp
+                keyUp()
             }
         })
     });
