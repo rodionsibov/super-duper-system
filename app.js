@@ -206,6 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 resultDisplay.style.color = 'goldenrod'
                 resultDisplay.style.fontWeight = 'bold'
                 document.removeEventListener('keyup', control)
+                document.removeEventListener('click', control)
             }
         }
     }
@@ -223,6 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resultDisplay.style.color = 'tomato'
             resultDisplay.style.fontWeight = 'bold'
             document.removeEventListener('keyup', control)
+            document.removeEventListener('click', control)
         }
     }
 })
