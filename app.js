@@ -156,6 +156,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.addEventListener('keyup', control)
+    document.querySelectorAll('button').forEach(element => {
+        element.addEventListener('keyup', (e) => {
+            if (element.id === 'right-btn') {
+                keyRight()
+            } else if (element.id === 'left-btn') {
+                keyLeft()
+            } else if (element.id === 'down-btn') {
+                keyDown()
+            } else if (element.id === 'up-btn') {
+                keyUp
+            }
+        })
+    });
 
     function keyRight() {
         moveRight()
@@ -190,6 +203,8 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < squares.length; i++) {
             if (squares[i].innerHTML == 2048) {
                 resultDisplay.innerHTML = 'You Win!'
+                resultDisplay.style.color = 'goldenrod'
+                resultDisplay.style.fontWeight = 'bold'
                 document.removeEventListener('keyup', control)
             }
         }
@@ -203,8 +218,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 zeros++
             }
         }
-        if(zeros === 0) {
+        if (zeros === 0) {
             resultDisplay.innerHTML = 'You Lose!'
+            resultDisplay.style.color = 'tomato'
+            resultDisplay.style.fontWeight = 'bold'
             document.removeEventListener('keyup', control)
         }
     }
