@@ -11,6 +11,7 @@ body {
     background-color: midnightblue;
     color: white;
     font-family: 'Courier New', Courier, monospace;
+    transform: scale(0.9);
 }
 
 .score-container {
